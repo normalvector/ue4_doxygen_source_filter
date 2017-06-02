@@ -7,15 +7,15 @@ This is done by filtering C++ code to look for things which look like UE4 macros
 This does have limitations:
 * It will miss the side-effects of the macros such as GENERATED_BODY making variables Public.
 * It won't work if you have /\* ... \*/ comments in your UE4 macros, this is a Todo and so may be fixed when I get time.
-* It can only handle 25 levels of nested parentheses in your source code.
+* It can only handle 25 levels of balanced nested parentheses in your source code.  It doesn't look at whether a parentheses is inside a string either so be careful with that.
 * It assumes each macro will start on line by itself with optional spaces in front of it- this is to stop it doing strange things with any strings which may look like macros.
-* It only catches UFUNCTION, UCLASS, UPROPERTY and UENUM- although adding more is simple enough.
+* It only catches UFUNCTION, UCLASS, UPROPERTY and UENUM- although adding more is simple enough- just add them as another item in the regular expression.
 * &hellip;I've not had the time to run this over the UE4 codebase itself to see how it does.
 
-So, it's not perfect, but it means I can use Doxygen for my own code and this makes me happy.
+So, it's not perfect, but it means I can use Doxygen for my own code and this makes me unreasonably happy.
 
 ## Usage
-To use this you'll need Doxygen and Python3 installed on your machine.  Put this script somewhere sensible and inside your doxygen.conf edit the *INPUT_FILTER* setting to point to the path- now
+To use this you'll need Doxygen and Python3 installed on your machine.  Put this script somewhere sensible and inside your doxygen.conf edit the *INPUT_FILTER* setting to point to the path- now Doxygen should call this when you build your documentation and the macros should no longer cause problems.
 
 ## License
 [MIT License](https://en.wikipedia.org/wiki/MIT_License)
