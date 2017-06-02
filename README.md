@@ -2,7 +2,7 @@
 
 This is a small [Python 3](https://www.python.org/) script intended to allow the [Doxygen](http://www.stack.nl/~dimitri/doxygen/) documentation tool to be run on C++ code which is using [Unreal Engine 4](https://www.unrealengine.com/what-is-unreal-engine-4).
 
-This is done by filtering C++ code to look for things which look like UE4 macros and commenting them out, and won't cause problems with your main build as the commented-out version is only passed to Doxygen.
+This is done by filtering C++ code to look for things which look like UE4 macros and commenting them out, and won't cause problems with your main build as the commented-out version is only passed to Doxygen.  It also won't affect the line numbers so anything Doxygen needs those for it fine.
 
 This does have limitations:
 * It will miss the side-effects of the macros such as GENERATED_BODY making variables Public.
