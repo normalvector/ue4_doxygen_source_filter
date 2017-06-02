@@ -10,7 +10,7 @@ This does have limitations:
 * It can only handle 25 levels of nested parentheses in your source code.
 * It assumes each macro will start on line by itself with optional spaces in front of it- this is to stop it doing strange things with any strings which may look like macros.
 * It only catches UFUNCTION, UCLASS, UPROPERTY and UENUM- although adding more is simple enough.
-* &ellip;I've not had the time to run this over the UE4 codebase itself to see how it does.
+* &hellip;I've not had the time to run this over the UE4 codebase itself to see how it does.
 
 So, it's not perfect, but it means I can use Doxygen for my own code and this makes me happy.
 
